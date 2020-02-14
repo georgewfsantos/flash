@@ -31,7 +31,7 @@ export default function Feed() {
   }, []);
 
   function registerToSocket() {
-    const socket = io('http://10.0.2.2:3333');
+    const socket = io('http://localhost:3333');
 
     socket.on('post', newPost => {
       setPosts(prev => [newPost, ...prev]);
@@ -66,7 +66,7 @@ export default function Feed() {
 
           <Image
             style={styles.feedImage}
-            source={{uri: `http://10.0.2.2:3333/files/${item.image}`}}
+            source={{uri: `http://localhost:3333/files/${item.image}`}}
           />
 
           <View style={styles.feedItemFooter}>
